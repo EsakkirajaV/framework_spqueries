@@ -1,0 +1,144 @@
+2021-12-15 16:56:00,587 DEBUG schedule MainThread : Running job Job(interval=1, unit=days, do=readQueryList, args=({'company_id': 1, 'division_id': 1},), kwargs={})
+2021-12-15 16:57:00,712 DEBUG schedule MainThread : Running job Job(interval=1, unit=days, do=readQueryList, args=({'company_id': 1, 'division_id': 1},), kwargs={})
+2021-12-16 11:42:46,106 INFO werkzeug MainThread :  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2021-12-16 11:42:46,123 INFO werkzeug MainThread :  * Restarting with stat
+2021-12-16 11:42:47,357 WARNING werkzeug MainThread :  * Debugger is active!
+2021-12-16 11:42:47,358 INFO werkzeug MainThread :  * Debugger PIN: 314-451-567
+2021-12-16 11:43:00,863 INFO werkzeug MainThread :  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2021-12-16 11:43:00,865 INFO werkzeug MainThread :  * Restarting with stat
+2021-12-16 11:43:01,919 WARNING werkzeug MainThread :  * Debugger is active!
+2021-12-16 11:43:01,920 INFO werkzeug MainThread :  * Debugger PIN: 314-451-567
+2021-12-16 11:43:28,631 INFO werkzeug MainThread :  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2021-12-16 11:43:28,633 INFO werkzeug MainThread :  * Restarting with stat
+2021-12-16 11:43:29,648 WARNING werkzeug MainThread :  * Debugger is active!
+2021-12-16 11:43:29,649 INFO werkzeug MainThread :  * Debugger PIN: 314-451-567
+2021-12-16 11:43:38,253 INFO werkzeug MainThread :  * Running on http://localhost:5000/ (Press CTRL+C to quit)
+2021-12-16 11:43:38,255 INFO werkzeug MainThread :  * Restarting with stat
+2021-12-16 11:43:39,142 WARNING werkzeug MainThread :  * Debugger is active!
+2021-12-16 11:43:39,142 INFO werkzeug MainThread :  * Debugger PIN: 314-451-567
+2021-12-16 11:44:03,661 INFO werkzeug MainThread :  * Detected change in '/home/esakkiraja/projects/wallaceTimer/app.py', reloading
+2021-12-16 11:44:03,874 INFO werkzeug MainThread :  * Restarting with stat
+2021-12-16 11:45:00,991 DEBUG schedule MainThread : Running job Job(interval=1, unit=days, do=readQueryList, args=({'company_id': 1, 'division_id': 1},), kwargs={})
+2021-12-16 11:46:00,489 DEBUG schedule MainThread : Running job Job(interval=1, unit=days, do=readQueryList, args=({'company_id': 1, 'division_id': 1},), kwargs={})
+2021-12-16 11:50:00,099 DEBUG schedule MainThread : Running job Job(interval=1, unit=days, do=readQueryList, args=({'company_id': 1, 'division_id': 1},), kwargs={})
+2021-12-16 11:51:00,167 DEBUG schedule MainThread : Running job Job(interval=1, unit=days, do=readQueryList, args=({'company_id': 1, 'division_id': 1},), kwargs={})
+2021-12-16 11:54:00,538 DEBUG schedule MainThread : Running job Job(interval=1, unit=days, do=readQueryList, args=({'company_id': 1, 'division_id': 1},), kwargs={})
+2021-12-16 11:54:00,545 ERROR root MainThread : Read Query function: No data found
+2021-12-16 11:57:00,578 DEBUG schedule MainThread : Running job Job(interval=1, unit=days, do=readQueryList, args=({'company_id': 1, 'division_id': 1},), kwargs={})
+2021-12-16 11:57:00,605 ERROR app MainThread : Read Query function: No data found
+2021-12-16 11:58:00,688 DEBUG schedule MainThread : Running job Job(interval=1, unit=days, do=readQueryList, args=({'company_id': 1, 'division_id': 1},), kwargs={})
+2021-12-16 11:58:00,697 ERROR app MainThread : Read Query function: No data found
+2021-12-16 12:03:00,436 DEBUG schedule MainThread : Running job Job(interval=1, unit=days, do=readQueryList, args=({'company_id': 1, 'division_id': 1},), kwargs={})
+2021-12-16 12:08:00,352 DEBUG schedule MainThread : Running job Job(interval=1, unit=days, do=readQueryList, args=({'company_id': 1, 'division_id': 1},), kwargs={})
+2021-12-16 12:08:00,380 ERROR root MainThread : Error(psycopg2.errors.UndefinedFunction) function get_customer() does not exist
+LINE 1: select *  from get_customer()
+                       ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+
+[SQL: select *  from get_customer()]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+2021-12-16 12:09:00,346 DEBUG schedule MainThread : Running job Job(interval=1, unit=days, do=readQueryList, args=({'company_id': 1, 'division_id': 1},), kwargs={})
+2021-12-16 12:09:00,374 ERROR root MainThread : Error(psycopg2.errors.UndefinedFunction) function get_customer() does not exist
+LINE 1: select *  from get_customer()
+                       ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+
+[SQL: select *  from get_customer()]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+2021-12-16 12:36:00,109 DEBUG schedule MainThread : Running job Job(interval=1, unit=days, do=readQueryList, args=({'company_id': 1, 'division_id': 1},), kwargs={})
+2021-12-16 12:37:00,925 DEBUG schedule MainThread : Running job Job(interval=1, unit=days, do=readQueryList, args=({'company_id': 1, 'division_id': 1},), kwargs={})
+2021-12-16 15:21:00,608 DEBUG schedule MainThread : Running job Job(interval=1, unit=days, do=readQueryList, args=({'company_id': 1, 'division_id': 1, 'timer': '15:21'},), kwargs={})
+2021-12-16 15:21:05,702 ERROR root MainThread : Failure to sending mail
+2021-12-16 15:21:09,662 ERROR root MainThread : Failure to sending mail
+2021-12-16 15:22:00,723 DEBUG schedule MainThread : Running job Job(interval=1, unit=days, do=readQueryList, args=({'company_id': 1, 'division_id': 1, 'timer': '15:22'},), kwargs={})
+2021-12-16 15:22:05,029 ERROR root MainThread : Failure to sending mail
+2021-12-16 15:22:09,990 ERROR root MainThread : Failure to sending mail
+2021-12-16 15:24:00,561 DEBUG schedule MainThread : Running job Job(interval=1, unit=days, do=readQueryList, args=({'company_id': 1, 'division_id': 1, 'timer': '15:24'},), kwargs={})
+2021-12-16 15:24:05,240 ERROR root MainThread : Failure to sending mail
+2021-12-16 15:24:10,713 ERROR root MainThread : Failure to sending mail
+2021-12-16 15:25:00,776 DEBUG schedule MainThread : Running job Job(interval=1, unit=days, do=readQueryList, args=({'company_id': 1, 'division_id': 1, 'timer': '15:25'},), kwargs={})
+2021-12-16 15:25:05,515 ERROR root MainThread : Failure to sending mail
+2021-12-16 15:25:09,783 ERROR root MainThread : Failure to sending mail
+2021-12-16 15:29:00,742 DEBUG schedule MainThread : Running job Job(interval=1, unit=days, do=readQueryList, args=({'company_id': 1, 'division_id': 1, 'timer': '15:29'},), kwargs={})
+2021-12-16 15:29:05,131 ERROR root MainThread : Failure to sending mail
+2021-12-16 15:29:10,566 ERROR root MainThread : Failure to sending mail
+2021-12-16 15:30:00,631 DEBUG schedule MainThread : Running job Job(interval=1, unit=days, do=readQueryList, args=({'company_id': 1, 'division_id': 1, 'timer': '15:30'},), kwargs={})
+2021-12-16 15:30:04,928 ERROR root MainThread : Failure to sending mail
+2021-12-16 15:30:08,947 ERROR root MainThread : Failure to sending mail
+2021-12-16 15:32:00,172 DEBUG schedule MainThread : Running job Job(interval=1, unit=days, do=readQueryList, args=({'company_id': 1, 'division_id': 1, 'timer': '15:32'},), kwargs={})
+2021-12-16 15:33:00,727 DEBUG schedule MainThread : Running job Job(interval=1, unit=days, do=readQueryList, args=({'company_id': 1, 'division_id': 1, 'timer': '15:33'},), kwargs={})
+2021-12-16 15:43:00,529 DEBUG schedule MainThread : Running job Job(interval=1, unit=days, do=readQueryList, args=({'company_id': 1, 'division_id': 1, 'timer': '15:43'},), kwargs={})
+2021-12-16 15:44:00,512 DEBUG schedule MainThread : Running job Job(interval=1, unit=days, do=readQueryList, args=({'company_id': 1, 'division_id': 1, 'timer': '15:44'},), kwargs={})
+2021-12-16 15:52:00,682 DEBUG schedule MainThread : Running job Job(interval=1, unit=days, do=readQueryList, args=({'company_id': 1, 'division_id': 1, 'timer': '15:52'},), kwargs={})
+2021-12-16 15:52:00,710 ERROR root MainThread : Error(psycopg2.errors.UndefinedFunction) function get_customer(integer, integer) does not exist
+LINE 1: select *  from get_customer(2,2)
+                       ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+
+[SQL: select *  from get_customer(2,2)]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+2021-12-16 15:58:00,752 DEBUG schedule MainThread : Running job Job(interval=1, unit=days, do=readQueryList, args=({'company_id': 1, 'division_id': 1, 'timer': '15:58'},), kwargs={})
+2021-12-16 15:59:00,661 DEBUG schedule MainThread : Running job Job(interval=1, unit=days, do=readQueryList, args=({'company_id': 2, 'division_id': 1, 'timer': '15:59'},), kwargs={})
+2021-12-16 15:59:00,688 ERROR root MainThread : Error(psycopg2.errors.UndefinedFunction) function get_customer() does not exist
+LINE 1: select * from get_customer()
+                      ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+
+[SQL: select * from get_customer()]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+2021-12-16 16:03:00,687 DEBUG schedule MainThread : Running job Job(interval=1, unit=days, do=readQueryList, args=({'company_id': 1, 'division_id': 1, 'timer': '16:03'},), kwargs={})
+2021-12-16 16:04:00,067 DEBUG schedule MainThread : Running job Job(interval=1, unit=days, do=readQueryList, args=({'company_id': 2, 'division_id': 1, 'timer': '16:04'},), kwargs={})
+2021-12-17 12:54:10,561 INFO werkzeug MainThread :  * Running on http://localhost:5004/ (Press CTRL+C to quit)
+2021-12-17 12:54:10,564 INFO werkzeug MainThread :  * Restarting with stat
+2021-12-17 12:54:11,527 WARNING werkzeug MainThread :  * Debugger is active!
+2021-12-17 12:54:11,624 INFO werkzeug MainThread :  * Debugger PIN: 408-927-980
+2021-12-17 12:54:29,411 INFO werkzeug MainThread :  * Running on http://localhost:5004/ (Press CTRL+C to quit)
+2021-12-17 12:54:29,412 INFO werkzeug MainThread :  * Restarting with stat
+2021-12-17 12:54:30,202 WARNING werkzeug MainThread :  * Debugger is active!
+2021-12-17 12:54:30,204 INFO werkzeug MainThread :  * Debugger PIN: 408-927-980
+2021-12-17 12:55:34,437 INFO werkzeug MainThread :  * Detected change in '/home/esakkiraja/projects/wallaceTimer/app.py', reloading
+2021-12-17 12:55:34,590 INFO werkzeug MainThread :  * Restarting with stat
+2021-12-17 12:56:04,462 INFO werkzeug MainThread :  * Running on http://localhost:5004/ (Press CTRL+C to quit)
+2021-12-17 12:56:04,464 INFO werkzeug MainThread :  * Restarting with stat
+2021-12-17 12:56:05,275 WARNING werkzeug MainThread :  * Debugger is active!
+2021-12-17 12:56:05,275 INFO werkzeug MainThread :  * Debugger PIN: 408-927-980
+2021-12-17 12:56:51,235 INFO werkzeug MainThread :  * Detected change in '/home/esakkiraja/projects/wallaceTimer/app.py', reloading
+2021-12-17 12:56:51,412 INFO werkzeug MainThread :  * Restarting with stat
+2021-12-17 12:58:38,996 INFO werkzeug MainThread :  * Running on http://localhost:5004/ (Press CTRL+C to quit)
+2021-12-17 12:58:38,997 INFO werkzeug MainThread :  * Restarting with stat
+2021-12-17 12:58:39,804 WARNING werkzeug MainThread :  * Debugger is active!
+2021-12-17 12:58:39,805 INFO werkzeug MainThread :  * Debugger PIN: 408-927-980
+2021-12-17 12:58:53,105 INFO werkzeug MainThread :  * Detected change in '/home/esakkiraja/projects/wallaceTimer/app.py', reloading
+2021-12-17 12:58:53,315 INFO werkzeug MainThread :  * Restarting with stat
+2021-12-17 13:14:12,313 ERROR root MainThread : Timer table No data Found
+2021-12-17 13:14:12,317 INFO werkzeug MainThread :  * Running on http://localhost:5004/ (Press CTRL+C to quit)
+2021-12-17 13:19:18,950 ERROR root MainThread : Timer table No data Found
+2021-12-17 13:19:57,770 ERROR root MainThread : Timer table No data Found
+2021-12-17 13:23:00,680 ERROR root MainThread : Timer table No data Found
+2021-12-17 13:23:09,314 ERROR root MainThread : Timer table No data Found
+2021-12-17 13:24:10,857 INFO werkzeug MainThread :  * Running on http://localhost:5004/ (Press CTRL+C to quit)
+2021-12-17 13:29:27,057 ERROR root MainThread : Timer table No data Found
+2021-12-17 13:29:52,038 ERROR root MainThread : Timer table No data Found
+2021-12-17 13:30:07,987 ERROR root MainThread : Timer table No data Found
+2021-12-17 13:30:07,989 INFO werkzeug MainThread :  * Running on http://localhost:5002/ (Press CTRL+C to quit)
+2021-12-17 15:29:00,280 DEBUG schedule MainThread : Running job Job(interval=1, unit=days, do=readQueryList, args=({'company_id': 1, 'division_id': 1, 'timer': '15:29'},), kwargs={})
+2021-12-17 15:29:00,302 ERROR root MainThread : Read Query function: No data found
+2021-12-17 15:42:00,086 DEBUG schedule MainThread : Running job Job(interval=1, unit=days, do=readQueryList, args=({'company_id': 1, 'division_id': 1, 'timer': '15:42'},), kwargs={})
+2021-12-17 15:42:00,130 ERROR root MainThread : Error(psycopg2.errors.UndefinedFunction) function get_customer(integer) does not exist
+LINE 1: select * from get_customer(2)
+                      ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+
+[SQL: select * from get_customer(2)]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+2021-12-17 15:44:00,149 DEBUG schedule MainThread : Running job Job(interval=1, unit=days, do=readQueryList, args=({'company_id': 1, 'division_id': 1, 'timer': '15:44'},), kwargs={})
+2021-12-17 15:44:00,174 ERROR root MainThread : Error(psycopg2.errors.UndefinedFunction) function get_customer(integer) does not exist
+LINE 1: select * from get_customer(1)
+                      ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+
+[SQL: select * from get_customer(1)]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+2021-12-17 15:50:00,643 DEBUG schedule MainThread : Running job Job(interval=1, unit=days, do=readQueryList, args=({'company_id': 1, 'division_id': 1, 'timer': '15:50'},), kwargs={})
+2021-12-17 16:41:00,825 DEBUG schedule MainThread : Running job Job(interval=1, unit=days, do=readQueryList, args=({'query_list_id': 1, 'timer': '16:41'},), kwargs={})
+2021-12-17 16:42:00,226 DEBUG schedule MainThread : Running job Job(interval=1, unit=days, do=readQueryList, args=({'query_list_id': 1, 'timer': '16:42'},), kwargs={})

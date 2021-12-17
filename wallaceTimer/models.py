@@ -1,3 +1,5 @@
+from logging import NullHandler
+from flask_migrate import history
 from flask_sqlalchemy import SQLAlchemy
 from enum import Enum
 from dataclasses import dataclass
@@ -49,9 +51,13 @@ class External_export_query_list(db.Model):
     query_list_id = db.Column(db.Integer, primary_key=True, autoincrement = True)
     query_company_id = db.Column(db.Integer)
     query_division_id = db.Column(db.Integer,db.ForeignKey('company_division.cmpy_divsionid'))
-    query_type = db.Column(db.Enum(QueryType,default=QueryType.SP))
+    query_type = db.Column(db.String)
     sp_name = db.Column(db.Text)
     query_status = db.Column(db.Enum(Status, default=Status.Active))
+    query_createdby = db.Column(db.String)
+    query_createdat = db.Column(db.DateTime)
+    query_updatedby = db.Column(db.String)
+    query_updatedat = db.Column(db.DateTime)   
 
     company_division_querylist  = relationship('CMPYDevision', backref = backref('external_export_query_timer'))
 
@@ -67,7 +73,11 @@ class External_export_query_params(db.Model):
     param_type = db.Column(db.String)
     param_name = db.Column(db.String)
     param_position = db.Column(db.String)   
-    param_status = db.Column(db.Enum(Status, default=Status.Active))       
+    param_status = db.Column(db.Enum(Status, default=Status.Active))
+    param_createdby = db.Column(db.String)
+    param_createdat = db.Column(db.DateTime)
+    param_updatedby = db.Column(db.String)
+    param_updatedat = db.Column(db.DateTime)       
 
     external_export_query_list  = relationship('External_export_query_list',uselist=False, backref = backref('external_export_query_params'))
 
@@ -81,15 +91,20 @@ class External_export_query_timer(db.Model):
     query_timer_id = db.Column(db.Integer,primary_key=True, autoincrement=True)
     timer_company_id = db.Column(db.Integer,nullable=False)
     timer_division_id = db.Column(db.Integer,nullable=False)
+    query_list_id_fk = db.Column(db.Integer, db.ForeignKey('external_export_query_list.query_list_id'))
     timer_company_url = db.Column(db.Text,nullable=False)
     timer_type = db.Column(db.Enum(Timer,default=Timer.Daily))
-    timer_time = db.Column(db.Time,default='00:00')
+    timer_time = db.Column(db.String, nullable=False)
     timer_status = db.Column(db.Enum(Status,default=Status.Active))
+    timer_createdby = db.Column(db.String)
+    timer_createdat = db.Column(db.DateTime)
+    timer_updatedby = db.Column(db.String)
+    timer_updatedat = db.Column(db.DateTime)
 
-    #company_division  = relationship('CMPYDevision',uselist=False,backref = backref('external_export_query_timer'))
+    #external_export_query_list  = relationship('External_export_query_list',uselist=False,backref = backref('external_export_query_timer'))
 
     def __repr__(self):
-        return '{} {} {} {} {} {}'.format(self.query_timer_id,self.timer_company_id,self.timer_division_id,self.timer_company_url,self.timer_type,self.timer_status)
+        return '{} {} {} {} {} {} {} {}'.format(self.query_timer_id,self.timer_company_id,self.timer_division_id,self.timer_company_url,self.timer_type,self.timer_status,self.timer_time,self.query_list_id_fk)
 
 @dataclass
 class Sendingmail(db.Model):
@@ -99,7 +114,7 @@ class Sendingmail(db.Model):
     send_cmpy_divid = db.Column(db.Integer, db.ForeignKey('company_division.cmpy_divsionid'))  
     send_email_tocc = db.Column(db.String, nullable=False)
     send_emailid = db.Column(db.String, nullable=False)
-    #send_emailstatus = db.Column(db.Enum(Status,default=Status.Active))
+    send_emailstatus = db.Column(db.Enum(Status,default=Status.Active))
 
     company_division = relationship('CMPYDevision', backref=backref('sendingmail'))
           
@@ -118,9 +133,28 @@ class Ftpserverdetails(db.Model):
     server_name = db.Column(db.String,nullable=False)
     server_password = db.Column(db.String,nullable=False)
     server_folderpath = db.Column(db.String,nullable=False)
-    #server_status = db.Column(db.Enum(Status, default=Status.Active))
+    server_status = db.Column(db.Enum(Status, default=Status.Active))
 
     company_division = relationship('CMPYDevision', backref=backref('ftpserverdetails'))
 
     def __repr__(self):
-        return "{} {} {} {} {} {} {}".format(self.sever_id,self.server_divisionid,self.server_host,self.server_name,self.server_password,self.server_folderpath)
+        return "{} {} {} {} {} {} {}".format(self.sever_id,self.server_divisionid,self.server_host,self.server_name,self.server_password,self.server_folderpath,self.server_status)
+
+
+@dataclass
+class HistoryDetails(db.Model):
+    __tablename__ = 'historydetails'
+
+    history_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    history_cmpyid = db.Column(db.Integer, nullable=False)
+    history_divid = db.Column(db.Integer, nullable=False)
+    history_scheduler_time = db.Column(db.String, nullable=False)
+    history_filename = db.Column(db.String, nullable=False)
+    history_filesenttime = db.Column(db.String, nullable=False)
+    history_ftpdetails = db.Column(db.Text, nullable=False)
+    history_to_emailid = db.Column(db.Text, nullable=False)
+    history_cc_emailid = db.Column(db.Text, nullable=False)
+    history_querytype  = db.Column(db.String, nullable=False)
+
+    def __repr__(self):
+        return "{} {} {} {} {} {} {} {} {}".format(self.history_id,self.history_cmpyid,self.history_divid,self.history_scheduler_time,self.history_filename,self.history_filesenttime,self.history_ftpdetails,self.history_to_emailid,self.history_cc_emailid)
