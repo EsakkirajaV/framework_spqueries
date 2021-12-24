@@ -1,0 +1,2 @@
+user_id,company_code,user_code,Employee_Code,User_Type_Code,Under_User_Code,Effective_From,Effective_To,User_Name,User_Pass,User_Status
+2,cmpy002,user002,emp002,utc002,uuc002,2021-12-21,2021-12-23,Raja,12345,1

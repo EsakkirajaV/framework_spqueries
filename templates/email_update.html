@@ -1,0 +1,70 @@
+{% extends '__base.html' %}
+{% block content%}
+    <div class="main-panel">
+        <div class="content-wrapper">
+            <div class="row">
+                <div class="col-lg-12 grid-margin stretch-card">
+                  <div class="card">
+                    <div class="card-body">
+                      <h4 class="card-title">Email Entry</h4>
+                      
+                      <div class="col-md-6">
+                        up<form method="POST" action="../mailupdate/{{join_results[0].send_cmpy_divid}}">
+                         
+                        
+                          
+                        
+                          {{ form.Company_id.label() }}
+                          
+                          {{ form.Company_id(class="form-control" ,placeholder="Company Id",value=join_results[0].send_cmpy_divid) }}
+                        
+                          <br>
+                      {{ form.email_to.label() }}
+                      {{ form.email_to(class="form-control",multiple="true",value=join_results[1].email_id) }}
+                      <br>
+                      {{ form.email_cc.label() }}
+                      {{ form.email_cc( class="form-control",multiple="true",value=join_results[0].email_id) }}
+                      <br>
+                     
+                      
+                    
+                      
+                      {{ form.email_status.label() }}
+                      <select name="email_status" class='form-control'>
+                        <option {% if join_results[0].email_status=="Active"%} selected {% else %}  {% endif %} value='Active'>Active </option>
+                        <option {% if join_results[0].email_status=="Inactive"%} selected {% endif %} value='Inactive'>InActive</option>
+                      
+                      </select>  
+                      <br>
+              <br>
+                      {{form.submit(class="btn btn-lg  btn-primary",id="btn1")}}
+                         
+                          
+                  
+                  
+                  </form>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+      </div>
+    <!-- content-wrapper ends -->
+    
+  </div>
+  <!-- main-panel ends -->
+</div>
+
+<!-- page-body-wrapper ends -->
+
+
+{% endblock %}
+
+  
+
+
+
+ 
+  
+  

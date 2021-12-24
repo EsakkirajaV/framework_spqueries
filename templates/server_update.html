@@ -1,0 +1,78 @@
+{% extends '__base.html' %}
+{% block content%}
+    <div class="main-panel">
+        <div class="content-wrapper">
+            <div class="row">
+                <div class="col-lg-12 grid-margin stretch-card">
+                  <div class="card">
+                    <div class="card-body">
+                      <h4 class="card-title">Server Entry</h4>
+                      
+                      <div class="col-md-6">
+                        <form method="POST" action="../updateserver/{{join_results[0].server_divisionid}}">
+                         
+                        
+                          
+                        
+                          {{ form.serverdivision_id.label() }}
+                          
+                          {{ form.serverdivision_id(class="form-control" ,value=join_results[0].server_divisionid) }}
+                        
+                          <br>
+                      {{ form.serverhost.label() }}
+                      {{ form.serverhost(class="form-control",value=join_results[0].server_host) }}
+                      <br>
+                      {{ form.servername.label() }}
+                      {{ form.servername( class="form-control",value=join_results[0].server_name) }}
+                      <br>
+                      <br>
+                      {{ form.serverpass.label() }}
+                      {{ form.serverpass( class="form-control",value=join_results[0].server_password) }}
+                      <br>
+                      <br>
+                      {{ form.serverpath.label() }}
+                      {{ form.serverpath( class="form-control",value=join_results[0].server_folderpath) }}
+                      <br>
+                     
+                      
+                    
+                      
+                      {{ form.server_status.label() }}
+                      <select name="server_status" class='form-control'>
+                        <option {% if join_results[0].server_status=="Active"%} selected {% else %}  {% endif %} value='Active'>Active </option>
+                        <option {% if join_results[0].server_status=="Inactive"%} selected {% endif %} value='Inactive'>InActive</option>
+                      
+                      </select>  
+                      <br>
+              <br>
+                      {{form.submit(class="btn btn-lg  btn-primary",id="btn1")}}
+                         
+                          
+                  
+                  
+                  </form>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+      </div>
+    <!-- content-wrapper ends -->
+    
+  </div>
+  <!-- main-panel ends -->
+</div>
+
+<!-- page-body-wrapper ends -->
+
+
+{% endblock %}
+
+  
+
+
+
+ 
+  
+  

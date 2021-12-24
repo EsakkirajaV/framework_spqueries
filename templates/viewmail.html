@@ -1,0 +1,75 @@
+{% extends '__base.html' %}
+{% block content%}
+
+
+
+<div class="main-panel">
+        <div class="content-wrapper">
+            <div class="row">
+                <div class="col-lg-12 grid-margin stretch-card">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="card-title"> EMAIL</div>
+                      {% with messages = get_flashed_messages() %}  
+                      {% if messages %}  
+                            {% for message in messages %}   
+                                 
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                  <strong>Notification! </strong>{{ message }}
+                                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                            {% endfor %}  
+                      {% endif %}  
+                      {% endwith %}  
+                      <div class="table-responsive">
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th>Action</th>
+                              <th>Company ID</th>
+                              <th> Email Type</th>
+                              <th> Email ID</th>
+                              <th>Status</th>
+                              
+                            
+                              
+
+                            
+                            </tr>
+                          </thead>
+                          <tbody>
+                      
+                            {% for results in join_results %}
+                            <tr>
+                              
+                              <td><a class='btn btn-primary btn-sm btn-icon-text' href="mailedit/{{results.send_cmpy_divid}}">Edit<i class="ti-file btn-icon-append"></i> </a></td>
+
+                              <td>{{results.send_cmpy_divid}}</td>
+                              
+                              
+                                    
+                              <td>{{results.send_email_tocc}}</td>
+                              <td>{{results.email_id}}</td>
+                              <td>{{results.email_status}}</td>
+                             
+                              
+                            </tr>
+                            {% endfor %}
+                            
+                          </tbody>  
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+      </div>
+    <!-- content-wrapper ends -->
+    
+  </div>
+  <!-- main-panel ends -->
+</div>
+<!-- page-body-wrapper ends --> 
+{% endblock %}

@@ -1,0 +1,162 @@
+{% extends '__base.html' %}
+{% block content%}
+    <div class="main-panel">
+        <div class="content-wrapper">
+            <div class="row">
+                <div class="col-lg-12 grid-margin stretch-card">
+                  <div class="card">
+                    <div class="card-body">
+                      <h4 class="card-title">Scheduler Entry</h4>
+                      
+                      <div class="col-md-6">
+                        <form method="POST">
+                          
+                        
+                          {{ form.company_id.label() }}
+                          
+                          {{ form.company_id(class="form-control" ,placeholder="Company Id") }}
+                        
+                          <br>
+                          {{ form.division_id.label() }}
+                          {{ form.division_id(class="form-control",placeholder="Division Id") }}
+                          <br>
+                          {{ form.query_type.label() }}
+                          {{ form.query_type(class="form-control") }}
+                          <br>
+                          {{ form.sp_name.label() }}
+                          {{ form.sp_name( class="form-control") }}
+                          <br>
+                          {{ form.parameters.label() }}
+                          {{ form.parameters(id="num_of_params" ,class="form-control")}}
+                          <input type="button" id="btn2" class='btn btn-sm btn-primary' value="Add">
+                          <br>
+                          <div id="getparams">
+                            <table  id ="paramstable" class="table table-bordered">
+                              <thead id="paramHeader">
+                              </thead>
+                              <tbody id="parambody"></tbody>
+                            </table>
+                          </div> 
+                          <br>
+                          <br>
+                          {{ form.scheduler_time.label() }}
+                          {{ form.scheduler_time(class="form-control") }}
+                          <br>
+                          {{ form.scheduler_type.label() }}
+                          {{ form.scheduler_type(class="form-control") }}
+                          <br>
+                          {{ form.status.label() }}
+                          {{ form.status(class="form-control") }}
+                          <br>
+                  <br>
+                          {{form.submit(class="btn btn-lg  btn-primary",id="btn1")}}
+                  
+                  
+                  </form>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+      </div>
+    <!-- content-wrapper ends -->
+    
+  </div>
+  <!-- main-panel ends -->
+</div>
+
+<!-- page-body-wrapper ends -->
+
+
+{% endblock %}
+{% block javascript %}
+    <script type="text/javascript">
+         $(document).ready(function(){
+    
+    var num_of_params=''
+    $("#btn2").click(function(){
+      num_of_params=$("#num_of_params").val();
+      
+      var hdcontent='';
+      
+    hdcontent += '<tr>';
+    hdcontent += '<td style="text-align:center;"> Parameter Name</td>';
+    hdcontent += '<td style="text-align:center;"> Parameter Type</td>';  
+    hdcontent += '<td style="text-align:center;"> Parameter Position</td>';   
+    hdcontent += '</tr>';
+    
+    $('#paramHeader').html(hdcontent); 
+    var content='';
+    for(i=0;i<num_of_params;i++)
+  {
+    content+='<tr>';
+    
+    content+='<td><input class="paramsname'+i+'" name ="paramname[]" type="text">'
+    content+='<td><input class="paramstype'+i+'" name="paramtype[]" type="text">';
+    content+='<td><input class="paramspos'+i+'" name="paramposition[]" type="text">';
+    content+='</tr>';
+   
+
+    
+  }
+ // content+='<tr><td colspan = "3" align="center"><input type="button" id="parambtn" class="btn btn-sm btn-primary" value="Save"></td></tr>'
+  $('#parambody').html(content);
+  $('#getparams').show();
+    });
+  
+  $(document).on('click','#parambtn',function () {     
+       num_of_params=$("#num_of_params").val();
+
+
+
+        var data1 = $(this).find("td:eq(0) input[type='text']").val();
+        var data2 = $(this).find("td:eq(1) input[type='text']").val();
+        alert(data1)
+        alert(data2)
+    // var a=''
+    // alert("Inside row Function")
+    // var formData=''
+    // $('div#getparams tbody#parambody tr').each(function() {
+    //   var formData=''
+    //     $(this).find("td input:text,select").each(function() {
+    //         textVal = this.value;
+    //         inputName = $(this).attr("id");
+    //         formData+='&'+inputName+'='+textVal;
+    //     });
+    //     alert(formData)
+         
+    // });
+                // var html_table_data = "";  
+                // var bRowStarted = true;  
+                // $('#paramstable tr').each(function () {  
+                //     $('td', this).each(function () {  
+                //       alert("INSIDE TABLE")
+                //         if (html_table_data.length == 0 || bRowStarted == true) {  
+                //             html_table_data += $(this).text();  
+                //             bRowStarted = false;  
+                //             alert("IN IF")
+                //         }  
+                //         else  
+                //             html_table_data += " | " + $(this).text();  
+                //             alert("INELSE")
+                //     });  
+                //     html_table_data += "\n";  
+                //     bRowStarted = true;  
+                // });  
+   
+               // alert(html_table_data);  
+            });  
+    
+  }); 
+
+    </script>
+    <!-- The contents of myscript.js will be loaded inside the script tag -->
+{% endblock %}
+  
+
+
+
+ 
+  
+  

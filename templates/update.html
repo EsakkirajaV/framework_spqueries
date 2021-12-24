@@ -1,0 +1,197 @@
+{% extends '__base.html' %}
+{% block content%}
+    <div class="main-panel">
+        <div class="content-wrapper">
+            <div class="row">
+                <div class="col-lg-12 grid-margin stretch-card">
+                  <div class="card">
+                    <div class="card-body">
+                      <h4 class="card-title">Scheduler Entry</h4>
+                      
+                      <div class="col-md-6">
+                        <form method="POST" action="../update/{{join_results[0].query_list_id}}">
+                         
+                        
+                          
+                        
+                          {{ form.company_id.label() }}
+                          
+                          {{ form.company_id(class="form-control" ,placeholder="Company Id",value=join_results[0].company_name) }}
+                        
+                          <br>
+                          {{ form.division_id.label() }}
+                          {{ form.division_id(class="form-control",placeholder="Division Id",value=join_results[0].cmpy_divsionname) }}
+                          <br>
+                          {{ form.query_type.label() }}
+                          {{ form.query_type(class="form-control",value=join_results[0].query_type) }}
+                          
+                          <br>
+                          {{ form.sp_name.label() }}
+                          
+                          <textarea class="form-control" name="sp_name" value="{{join_results[0].sp_name}}">{{join_results[0].sp_name}}</textarea>
+                          <br>
+                          {{ form.parameters.label() }}
+                          {{ form.parameters(id="num_of_params" ,class="form-control",value=join_results[0].count)}}
+                          <input type="button" id="btn2" class='btn btn-sm btn-primary' value="Add">
+                          
+                          <br>
+                          <div id="getparams">
+                            <table  id ="paramstable" class="table table-bordered">
+                              <thead id="paramHeader">
+                              </thead>
+                              <tbody id="parambody">
+                                <tr>
+                                <td style="text-align:center;"> Parameter Name</td>
+                                <td style="text-align:center;"> Parameter Type</td>  
+                                <td style="text-align:center;"> Parameter Position</td> 
+                                </tr>
+                                {% for i in range(join_results[0].count) %}
+                                  <tr>
+    
+    <td><input class="paramsname{{i}}" name ="paramname[]" type="text" value="{{join_results[0].param_name.split(',')[i]}}">
+   <td><input class="paramstype{{i}}" name="paramtype[]" type="text" value="{{join_results[0].param_type.split(',')[i]}}">
+    <td><input class="paramspos{{i}}" name="paramposition[]" type="text" value="{{join_results[0].param_position.split(',')[i]}}">
+    </tr>
+
+                                
+
+                                {% endfor %}
+                              </tbody>
+                            </table>
+                          </div> 
+                          <br>
+                          <br>
+                          {{ form.scheduler_time.label() }}
+                          {{ form.scheduler_time(class="form-control",value=join_results[0].timer_time) }}
+                          <br>
+                          {{ form.scheduler_type.label() }}
+                          {{ form.scheduler_type(class="form-control",value=join_results[0].timer_type) }}
+                          <br>
+              
+                          {{ form.status.label() }}
+                          <select name="status" class='form-control'>
+                            <option {% if join_results[0].timer_status=="Active"%} selected {% else %}  {% endif %} value='Active'>Active </option>
+                            <option {% if join_results[0].timer_status=="Inactive"%} selected {% endif %} value='Inactive'>InActive</option>
+                          </select>  
+                          <br>
+                          <input type="hidden" name="company_id" value={{join_results[0].query_company_id}}>
+                          <input type="hidden" name="division_id" value={{join_results[0].query_division_id}}>
+                  <br>
+                          {{form.submit(class="btn btn-lg  btn-primary",id="btn1",)}}
+                          
+                  
+                  
+                  </form>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+      </div>
+    <!-- content-wrapper ends -->
+    
+  </div>
+  <!-- main-panel ends -->
+</div>
+
+<!-- page-body-wrapper ends -->
+
+
+{% endblock %}
+{% block javascript %}
+    <script type="text/javascript">
+         $(document).ready(function(){
+    var num_of_params=''
+    var length="{{join_results[0].count}}"
+    //$('#btn2').trigger("click");
+
+
+  
+  $(document).on('click','#parambtn',function () {     
+       num_of_params=$("#num_of_params").val();
+
+
+
+        var data1 = $(this).find("td:eq(0) input[type='text']").val();
+        var data2 = $(this).find("td:eq(1) input[type='text']").val();
+        alert(data1)
+        alert(data2)
+    // var a=''
+    // alert("Inside row Function")
+    // var formData=''
+    // $('div#getparams tbody#parambody tr').each(function() {
+    //   var formData=''
+    //     $(this).find("td input:text,select").each(function() {
+    //         textVal = this.value;
+    //         inputName = $(this).attr("id");
+    //         formData+='&'+inputName+'='+textVal;
+    //     });
+    //     alert(formData)
+         
+    // });
+                // var html_table_data = "";  
+                // var bRowStarted = true;  
+                // $('#paramstable tr').each(function () {  
+                //     $('td', this).each(function () {  
+                //       alert("INSIDE TABLE")
+                //         if (html_table_data.length == 0 || bRowStarted == true) {  
+                //             html_table_data += $(this).text();  
+                //             bRowStarted = false;  
+                //             alert("IN IF")
+                //         }  
+                //         else  
+                //             html_table_data += " | " + $(this).text();  
+                //             alert("INELSE")
+                //     });  
+                //     html_table_data += "\n";  
+                //     bRowStarted = true;  
+                // });  
+   
+               // alert(html_table_data);  
+            });  
+    
+  }); 
+
+  $(document).on("click",'#btn2',function(){
+      num_of_params=$("#num_of_params").val();
+      
+      var hdcontent='';
+      
+    hdcontent += '<tr>';
+    hdcontent += '<td style="text-align:center;"> Parameter Name</td>';
+    hdcontent += '<td style="text-align:center;"> Parameter Type</td>';  
+    hdcontent += '<td style="text-align:center;"> Parameter Position</td>';   
+    hdcontent += '</tr>';
+    
+    $('#paramHeader').html(hdcontent); 
+    var content='';
+    var param_name = "{{join_results[0].param_name.split(',')}}"
+    console.log(param_name)
+    for(i=0;i<num_of_params;i++)
+  {
+    content+='<tr>';
+    
+    content+='<td><input class="paramsname'+i+'" name ="paramname[]" type="text" value="">'
+    content+='<td><input class="paramstype'+i+'" name="paramtype[]" type="text">';
+    content+='<td><input class="paramspos'+i+'" name="paramposition[]" type="text">';
+    content+='</tr>';
+   
+
+    
+  }
+ // content+='<tr><td colspan = "3" align="center"><input type="button" id="parambtn" class="btn btn-sm btn-primary" value="Save"></td></tr>'
+  $('#parambody').html(content);
+  $('#getparams').show();
+    });
+
+    </script>
+    <!-- The contents of myscript.js will be loaded inside the script tag -->
+{% endblock %}
+  
+
+
+
+ 
+  
+  

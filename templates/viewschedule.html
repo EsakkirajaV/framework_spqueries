@@ -1,0 +1,88 @@
+{% extends '__base.html' %}
+{% block content%}
+
+
+
+<div class="main-panel">
+        <div class="content-wrapper">
+            <div class="row">
+                <div class="col-lg-12 grid-margin stretch-card">
+                  <div class="card">
+                    <div class="card-body">
+                      <h4 class="card-title"> schedule</h4>
+                      
+                      {% with messages = get_flashed_messages() %}  
+                      {% if messages %}  
+                            {% for message in messages %}   
+                                 
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                  <strong>Notification! </strong>{{ message }}
+                                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                            {% endfor %}  
+                      {% endif %}  
+                      {% endwith %}  
+                      <div class="table-responsive">
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              
+                              <th>Action</th>
+                              <th>Company Id</th>
+                              <th>Division Id</th>
+                              <th>Query Type</th>
+                              <th>SP Name</th>
+                            
+                                
+                                  <th>Parameter Name</th>
+                                  <th>Parameter Type</th>
+                                  <th>Parameter Position</th>
+                                
+                            
+                              
+                              
+                              
+                              <th>Timer Type</th>
+                              <th>Scheduled Time</th>
+                              <th>Status</th>
+
+                            
+                            </tr>
+                          </thead>
+                          <tbody>
+                      
+                            {% for results in join_results %}
+                            <tr>
+                              <td><a class='btn btn-primary btn-sm btn-icon-text' href="edit/{{results.query_list_id}}">Edit<i class="ti-file btn-icon-append"></i> </a></td>
+                            
+                              <td>{{results.company_name}}</td>
+                              <td>{{results.cmpy_divsionname}}</td>
+                              <td>{{results.query_type}}</td>
+                              <td>{{results.sp_name}}</td>
+                              <td>{{results.param_name}}</td>
+                              <td>{{results.param_type}}</td>
+                              <td>{{results.param_position}}</td>
+                              <td>{{results.timer_type}}</td>
+                              <td>{{results.timer_time}}</td>
+                              <td>{{results.timer_status}}</td>
+                              
+                            </tr>
+                            {% endfor %}
+                            
+                          </tbody>  
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+      </div>
+    <!-- content-wrapper ends -->
+    
+  </div>
+  <!-- main-panel ends -->
+</div>
+<!-- page-body-wrapper ends --> 
+{% endblock %}

@@ -1,0 +1,2 @@
+user_id,company_code,user_code,Employee_Code,User_Type_Code,Under_User_Code,Effective_From,Effective_To,user_name,User_Pass,User_Status
+3,cmpy003,user003,emp003,utc003,uuc003,2021-12-19,2021-12-24,Esakki,12345,1

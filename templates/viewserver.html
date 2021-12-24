@@ -1,0 +1,78 @@
+{% extends '__base.html' %}
+{% block content%}
+
+
+
+<div class="main-panel">
+        <div class="content-wrapper">
+            <div class="row">
+                <div class="col-lg-12 grid-margin stretch-card">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="card-title"> EMAIL</div>
+                      {% with messages = get_flashed_messages() %}  
+                      {% if messages %}  
+                            {% for message in messages %}   
+                                 
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                  <strong>Notification! </strong>{{ message }}
+                                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                            {% endfor %}  
+                      {% endif %}  
+                      {% endwith %}  
+                      <div class="table-responsive">
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th>Action</th>
+                              <th>Company ID</th>
+                              <th>Server Host</th>
+                              <th> Server Name</th>
+                              <th> Server Path</th>
+                              <th>Server Status</th>
+                              
+                            
+                              
+
+                            
+                            </tr>
+                          </thead>
+                          <tbody>
+                      
+                            {% for results in join_results %}
+                            <tr>
+                              
+                              <td><a class='btn btn-primary btn-sm btn-icon-text' href="serveredit/{{results.server_divisionid}}">Edit<i class="ti-file btn-icon-append"></i> </a></td>
+
+                              <td>{{results.server_divisionid}}</td>
+                              
+                              
+                                    
+                              <td>{{results.server_host}}</td>
+                              <td>{{results.server_name}}</td>
+                              <td>{{results.server_folderpath}}</td>
+                              
+                              <td>{{results.server_status.name}}</td>
+                             
+                              
+                            </tr>
+                            {% endfor %}
+                            
+                          </tbody>  
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+      </div>
+    <!-- content-wrapper ends -->
+    
+  </div>
+  <!-- main-panel ends -->
+</div>
+<!-- page-body-wrapper ends --> 
+{% endblock %}
